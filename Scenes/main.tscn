@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://drr5x5741oasl" path="res://Assets/TileMap---mini-game-jam.png" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bcy62tr533ve2" path="res://Scenes/platform.tscn" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://dejj3cho1jdvi" path="res://icon.svg" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://b8yvbwlafhetv" path="res://Scenes/enemy.tscn" id="5_kry3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8gbba"]
 texture = ExtResource("2_bo1nx")
@@ -22,7 +23,7 @@ texture = ExtResource("2_bo1nx")
 1:1/0/z_index = -1
 1:1/0/terrain_set = 0
 1:1/0/terrain = 1
-1:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -4.13675, 8, -4.3166084, 8, -8, -8, -8)
+1:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6.115196, -8, -5.755479)
 1:1/0/physics_layer_1/polygon_0/one_way = true
 1:1/0/terrains_peering_bit/bottom_side = 1
 2:1/0 = 0
@@ -235,3 +236,6 @@ z_index = -4
 position = Vector2(305, -103)
 scale = Vector2(5.96875, 2.953125)
 texture = ExtResource("4_jjvhh")
+
+[node name="Enemy" parent="." unique_id=243130884 instance=ExtResource("5_kry3j")]
+position = Vector2(82, -9)
