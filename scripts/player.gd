@@ -7,36 +7,35 @@ const JUMP_VELOCITY = -300.0
 
 
 func _physics_process(delta: float) -> void:
-	# 1. Gravity toevoegen
+	# gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# 2. Springen
+	# jumping
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# 3. Richting en snelheid
+	# moving
 	var direction := Input.get_axis("left", "right")
+
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	# 4. ANIMATIE LOGICA (Belangrijk!)
+	#animations
 	if not is_on_floor():
-		# Prioriteit: We zijn in de lucht
 		if velocity.y < 0:
 			animator.play("jump")
 		else:
 			animator.play("fall")
 	else:
-		# We zijn op de grond
 		if direction != 0:
 			animator.play("run")
 		else:
 			animator.play("idle")
 
-	# 5. Omdraaien (Flippen)
+	#flip
 	if direction > 0:
 		animator.flip_h = false
 	elif direction < 0:

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://rvxp5dna0d2i"]
 
-[ext_resource type="Script" uid="uid://d4nfp5m23oclp" path="res://Scenes/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://d4nfp5m23oclp" path="res://scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cq262pjl0p2s6" path="res://Assets/MonkeySpriteIdle.png" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://c1tcf7fpo4e7e" path="res://Assets/MonkeySpritefall.png" id="2_vgqql"]
 [ext_resource type="Texture2D" uid="uid://d0hdayiat6von" path="res://Assets/MonkeySpriteRun.png" id="3_6t5aa"]
@@ -179,8 +179,10 @@ animator = NodePath("animator")
 
 [node name="animator" type="AnimatedSprite2D" parent="." unique_id=485235841]
 sprite_frames = SubResource("SpriteFrames_f1ek2")
-animation = &"jump"
+animation = &"fall"
 autoplay = "idle"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1181668893]
 position = Vector2(-1, 2)
