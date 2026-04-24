@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8yvbwlafhetv"]
 
 [ext_resource type="Texture2D" uid="uid://ciqppafvpjf3k" path="res://Assets/DevilEnemyidle.png" id="1_1f0kj"]
-[ext_resource type="Script" uid="uid://dntpneryh0wm5" path="res://Scenes/enemy.gd" id="1_afpow"]
+[ext_resource type="Script" uid="uid://dntpneryh0wm5" path="res://scripts/enemy.gd" id="1_afpow"]
 [ext_resource type="Texture2D" uid="uid://c32upglctexg4" path="res://Assets/DevilEnemyrun.png" id="2_afpow"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_287tu"]
