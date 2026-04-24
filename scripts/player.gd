@@ -41,4 +41,10 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		animator.flip_h = true
 
+	#falling through platforms
+	set_collision_mask_value(2, true)
+
+	if Input.is_action_just_pressed("down"):
+			position.y += 1 
+
 	move_and_slide()

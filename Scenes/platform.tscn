@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bcy62tr533ve2"]
+
+[ext_resource type="Texture2D" uid="uid://du0i0fa5q3oay" path="res://Assets/Platform----mini-game-jam.png" id="1_1rc8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5262"]
+size = Vector2(20, 4.5)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=673121959]
+z_index = -1
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=497543824]
+texture = ExtResource("1_1rc8e")
+region_enabled = true
+region_rect = Rect2(7.8230667, 10.680231, 20.239502, 5.440727)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1359179892]
+z_index = -1
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_n5262")
+one_way_collision = true

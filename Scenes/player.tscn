@@ -173,9 +173,10 @@ animations = [{
 radius = 3.0
 height = 12.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1775255907 node_paths=PackedStringArray("animator")]
+[node name="Player" type="CharacterBody2D" unique_id=1775255907 node_paths=PackedStringArray("animator", "player")]
 script = ExtResource("1_cvnsp")
 animator = NodePath("animator")
+player = NodePath(".")
 
 [node name="animator" type="AnimatedSprite2D" parent="." unique_id=485235841]
 sprite_frames = SubResource("SpriteFrames_f1ek2")
