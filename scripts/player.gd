@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var animator: AnimatedSprite2D
+@export var banana_label: Label
 # Drag and drop your game_over.tscn file into this slot in the Inspector
 @export_file("*.tscn") var game_over_scene: String
 
@@ -13,6 +14,8 @@ const JUMP_VELOCITY = -300.0
 var coyote_time := 0.1
 var coyote_timer := 0.0
 var is_dead := false # Prevents movement and multiple death triggers
+
+var banana: Banana
 
 func _ready():
 	# Set collision mask for platforms (Layer 2)
@@ -63,6 +66,9 @@ func _physics_process(delta: float) -> void:
 
 	_fallThroughPlatforms()
 	move_and_slide()
+
+func _banana_label():
+	banana_label.text = str(banana.banana_level)
 
 func _fallThroughPlatforms():
 	# Allow falling through one-way platforms (Layer 2)

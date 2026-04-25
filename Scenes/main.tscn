@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bcy62tr533ve2" path="res://Scenes/platform.tscn" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://dejj3cho1jdvi" path="res://icon.svg" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://b8yvbwlafhetv" path="res://Scenes/enemy.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://hhbxjyky0nyh" path="res://Scenes/banana.tscn" id="6_21xkr"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kry3j"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, 8, -4.6493483, -8, -4.748271)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hptm8"]
+polygon = PackedVector2Array(-8, -3.2374563, 8, -3.4173155, 8, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_21xkr"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, 8, -4.6493483, -8, -4.748271)
@@ -29,7 +30,7 @@ texture = ExtResource("2_bo1nx")
 1:1/0/z_index = -1
 1:1/0/terrain_set = 0
 1:1/0/terrain = 1
-1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_kry3j")
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_hptm8")
 1:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6.115196, -8, -5.755479)
 1:1/0/physics_layer_1/polygon_0/one_way = true
 1:1/0/terrains_peering_bit/bottom_side = 1
@@ -311,6 +312,9 @@ position = Vector2(283, -57)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/Platform" unique_id=54578521]
 libraries/ = SubResource("AnimationLibrary_kry3j")
 autoplay = &"plat 2"
+
+[node name="Banana" parent="platforms/Platform" unique_id=1905246763 instance=ExtResource("6_21xkr")]
+position = Vector2(1, -12)
 
 [node name="Platform2" parent="platforms" unique_id=2032990569 instance=ExtResource("3_8gbba")]
 position = Vector2(283, -57)

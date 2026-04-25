@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://hhbxjyky0nyh"]
+
+[ext_resource type="Texture2D" uid="uid://bf0q04dfe7udu" path="res://Assets/Banana----mini-game-jam-idle.png" id="1_3gmt6"]
+[ext_resource type="Script" uid="uid://cc3iip10lul4p" path="res://Scenes/banana.gd" id="1_bkbm4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkbm4"]
+atlas = ExtResource("1_3gmt6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2ebl"]
+atlas = ExtResource("1_3gmt6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0exhq"]
+atlas = ExtResource("1_3gmt6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_863xn"]
+atlas = ExtResource("1_3gmt6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxbs5"]
+atlas = ExtResource("1_3gmt6")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpc5e"]
+atlas = ExtResource("1_3gmt6")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfaon"]
+atlas = ExtResource("1_3gmt6")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rosxd"]
+atlas = ExtResource("1_3gmt6")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w730"]
+atlas = ExtResource("1_3gmt6")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja1q4"]
+atlas = ExtResource("1_3gmt6")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwab7"]
+atlas = ExtResource("1_3gmt6")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4lj08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkbm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2ebl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0exhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_863xn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxbs5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpc5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfaon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rosxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w730")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja1q4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwab7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ihcg8"]
+
+[sub_resource type="Gradient" id="Gradient_wunx4"]
+offsets = PackedFloat32Array(0.39759037, 0.6325301)
+colors = PackedColorArray(0.9578313, 0.9578313, 0.9578313, 1, 0.08887094, 0.08887094, 0.08887094, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vv16g"]
+gradient = SubResource("Gradient_wunx4")
+fill = 1
+fill_from = Vector2(0.4695652, 0.526087)
+
+[node name="Banana" type="Area2D" unique_id=1905246763]
+script = ExtResource("1_bkbm4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1888005390]
+sprite_frames = SubResource("SpriteFrames_4lj08")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.5308028
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=705942811]
+shape = SubResource("CircleShape2D_ihcg8")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2041647719]
+color = Color(1, 1, 0.18039216, 1)
+energy = 0.55
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_vv16g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

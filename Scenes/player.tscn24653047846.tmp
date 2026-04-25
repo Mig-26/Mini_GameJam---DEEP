@@ -215,6 +215,7 @@ height = 16.0
 script = ExtResource("1_cvnsp")
 animator = NodePath("animator")
 game_over_scene = "uid://br4n1ebfvul68"
+death_height = null
 
 [node name="animator" type="AnimatedSprite2D" parent="." unique_id=485235841]
 sprite_frames = SubResource("SpriteFrames_f1ek2")
