@@ -1,8 +1,8 @@
-class_name Banana extends Area2D
+extends Area2D
 
-var banana_level: int = 0
+@export var value: int = 1  # how many points this banana gives
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		banana_level += 1
+		body.add_score(value)  # ✅ send score to player
 		queue_free()
