@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hhbxjyky0nyh"]
 
 [ext_resource type="Texture2D" uid="uid://bf0q04dfe7udu" path="res://Assets/Banana----mini-game-jam-idle.png" id="1_3gmt6"]
-[ext_resource type="Script" uid="uid://cc3iip10lul4p" path="res://Scenes/banana.gd" id="1_bkbm4"]
+[ext_resource type="Script" uid="uid://cc3iip10lul4p" path="res://scripts/banana.gd" id="1_bkbm4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bkbm4"]
 atlas = ExtResource("1_3gmt6")
@@ -106,7 +106,7 @@ script = ExtResource("1_bkbm4")
 sprite_frames = SubResource("SpriteFrames_4lj08")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.5308028
+frame_progress = 0.47739035
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=705942811]
 shape = SubResource("CircleShape2D_ihcg8")

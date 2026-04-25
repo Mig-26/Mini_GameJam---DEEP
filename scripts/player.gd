@@ -15,8 +15,6 @@ var coyote_time := 0.1
 var coyote_timer := 0.0
 var is_dead := false # Prevents movement and multiple death triggers
 
-var banana: Banana
-
 func _ready():
 	# Set collision mask for platforms (Layer 2)
 	set_collision_mask_value(2, true)
@@ -68,7 +66,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _banana_label():
-	banana_label.text = str(banana.banana_level)
+	print()
 
 func _fallThroughPlatforms():
 	# Allow falling through one-way platforms (Layer 2)
