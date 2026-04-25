@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://br4n1ebfvul68"]
+
+[ext_resource type="Script" uid="uid://34wkmkx3il71" path="res://scripts/game_over.gd" id="1_ojehl"]
+
+[node name="Game Over" type="Control" unique_id=1779368539]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ojehl")
+main_game_scene = "uid://jb0tfi0vyq2o"
+
+[node name="Label" type="Label" parent="." unique_id=1798409664]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 252.0
+offset_right = 593.0
+offset_bottom = 277.0
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="quit" type="Button" parent="Label" unique_id=1607811694]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 34.0
+offset_right = 123.0
+offset_bottom = 65.0
+text = "Quit
+
+
+"
+
+[node name="continue" type="Button" parent="Label" unique_id=906450205]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 34.0
+offset_right = 47.0
+offset_bottom = 65.0
+text = "continue
+
+"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=902411385]
+position = Vector2(547, 294)
+zoom = Vector2(4, 4)
+
+[connection signal="pressed" from="Label/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Label/continue" to="." method="_on_continue_pressed"]

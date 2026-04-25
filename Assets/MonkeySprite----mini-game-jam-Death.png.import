@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0hdayiat6von"
-path="res://.godot/imported/MonkeySpriteRun.png-feaf5e063fadda1aadd170f18ca93b32.ctex"
+uid="uid://b8w0y3bpas0e0"
+path="res://.godot/imported/MonkeySprite----mini-game-jam-Death.png-32c9b93a24198b26ded25e0d0f26f9b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MonkeySpriteRun.png"
-dest_files=["res://.godot/imported/MonkeySpriteRun.png-feaf5e063fadda1aadd170f18ca93b32.ctex"]
+source_file="res://Assets/MonkeySprite----mini-game-jam-Death.png"
+dest_files=["res://.godot/imported/MonkeySprite----mini-game-jam-Death.png-32c9b93a24198b26ded25e0d0f26f9b0.ctex"]
 
 [params]
 

@@ -242,6 +242,14 @@ _data = {
 
 [node name="Main" type="Node2D" unique_id=1298534080]
 
+[node name="Label" type="Label" parent="." unique_id=97172287]
+z_index = 1
+offset_left = -131.0
+offset_top = 19.0
+offset_right = 236.0
+offset_bottom = 42.0
+text = "collect the bananas, collect the king to move on"
+
 [node name="Player" parent="." unique_id=1775255907 instance=ExtResource("1_jjgbg")]
 position = Vector2(19, -24)
 
@@ -270,7 +278,7 @@ tile_set = SubResource("TileSet_jjvhh")
 
 [node name="Icon" type="Sprite2D" parent="envioronment" unique_id=671516366]
 z_index = -4
-position = Vector2(277, -95)
+position = Vector2(277, -80.00001)
 scale = Vector2(5.96875, 2.953125)
 texture = ExtResource("4_jjvhh")
 
@@ -285,6 +293,7 @@ color = Color(1, 1, 0.6666667, 1)
 energy = 0.64
 shadow_enabled = true
 shadow_color = Color(0.6469229, 0.42596158, 0.7635475, 0)
+shadow_filter = 1
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="envioronment" unique_id=1336477057]
 position = Vector2(146, -306)

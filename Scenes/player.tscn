@@ -3,8 +3,25 @@
 [ext_resource type="Script" uid="uid://d4nfp5m23oclp" path="res://scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cq262pjl0p2s6" path="res://Assets/MonkeySpriteIdle.png" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://c1tcf7fpo4e7e" path="res://Assets/MonkeySpritefall.png" id="2_vgqql"]
-[ext_resource type="Texture2D" uid="uid://d0hdayiat6von" path="res://Assets/MonkeySpriteRun.png" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://b8w0y3bpas0e0" path="res://Assets/MonkeySprite----mini-game-jam-Death.png" id="2_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://c7n1m6lbmpkck" path="res://Assets/MonkeySpriteJump-up.png" id="4_fkybt"]
+[ext_resource type="Texture2D" uid="uid://bcbqdojvkml74" path="res://Assets/MonkeySprite----mini-game-jam-Run.png" id="5_fkybt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpjfl"]
+atlas = ExtResource("2_x3wgy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi64h"]
+atlas = ExtResource("2_x3wgy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ijsl"]
+atlas = ExtResource("2_x3wgy")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1odr"]
+atlas = ExtResource("2_x3wgy")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fd4e3"]
 atlas = ExtResource("2_vgqql")
@@ -59,35 +76,52 @@ atlas = ExtResource("4_fkybt")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
-atlas = ExtResource("3_6t5aa")
+atlas = ExtResource("5_fkybt")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tx1dd"]
-atlas = ExtResource("3_6t5aa")
+atlas = ExtResource("5_fkybt")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
-atlas = ExtResource("3_6t5aa")
+atlas = ExtResource("5_fkybt")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pu2lt"]
-atlas = ExtResource("3_6t5aa")
+atlas = ExtResource("5_fkybt")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ukyrk"]
-atlas = ExtResource("3_6t5aa")
+atlas = ExtResource("5_fkybt")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dp3o"]
-atlas = ExtResource("3_6t5aa")
+atlas = ExtResource("5_fkybt")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4iuc"]
-atlas = ExtResource("3_6t5aa")
+atlas = ExtResource("5_fkybt")
 region = Rect2(96, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f1ek2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpjfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi64h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ijsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1odr")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fd4e3")
@@ -173,18 +207,30 @@ animations = [{
 radius = 3.0
 height = 12.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1775255907 node_paths=PackedStringArray("animator", "player")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fkybt"]
+radius = 4.0
+height = 16.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1775255907 node_paths=PackedStringArray("animator")]
 script = ExtResource("1_cvnsp")
 animator = NodePath("animator")
-player = NodePath(".")
+game_over_scene = "uid://br4n1ebfvul68"
 
 [node name="animator" type="AnimatedSprite2D" parent="." unique_id=485235841]
 sprite_frames = SubResource("SpriteFrames_f1ek2")
-animation = &"fall"
+animation = &"death"
 autoplay = "idle"
-frame = 2
+frame = 3
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1181668893]
 position = Vector2(-1, 2)
 shape = SubResource("CapsuleShape2D_tx1dd")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=548643454]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=100827163]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_fkybt")
+
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
