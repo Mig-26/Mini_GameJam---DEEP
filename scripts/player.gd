@@ -5,7 +5,8 @@ extends CharacterBody2D
 @export_file("*.tscn") var game_over_scene: String
 
 @export_file("*.tscn") var level_2: String = "res://Scenes/level_2.tscn"
-@export_file("*.tscn") var level_3: String = ""
+@export_file("*.tscn") var level_3: String = "res://Scenes/level_3.tscn"
+@export_file("*.tscn") var end: String = ""
 
 @export var death_height: float = 1000.0
 
@@ -94,6 +95,10 @@ func change_level():
 	if score == 18 && get_tree().current_scene.name == "level_2":
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file(level_3)
+
+	if score == 32 && get_tree().current_scene.name == "level_3":
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file(end)
 
 func die():
 	if is_dead:
