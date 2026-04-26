@@ -4,6 +4,9 @@ extends CharacterBody2D
 @export var banana_label: Label
 @export_file("*.tscn") var game_over_scene: String
 
+@export_file("*.tscn") var level_2: String = "res://Scenes/level_2.tscn"
+@export_file("*.tscn") var level_3: String = ""
+
 @export var death_height: float = 1000.0
 
 const SPEED = 150.0
@@ -13,7 +16,6 @@ var coyote_time := 0.1
 var coyote_timer := 0.0
 var is_dead := false
 
-# ✅ CENTRAL SCORE VARIABLE
 var score: int = 0
 
 func _ready():
@@ -63,6 +65,7 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		animator.flip_h = true
 
+	change_level()
 	_fallThroughPlatforms()
 	move_and_slide()
 
@@ -76,14 +79,21 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies") or body.is_in_group("outOfBounds"):
 		die()
 
-# ✅ FUNCTION TO ADD SCORE
 func add_score(amount: int):
 	score += amount
 	update_score_ui()
 
-# ✅ UPDATE LABEL
 func update_score_ui():
 	banana_label.text = "Score: " + str(score)
+
+func change_level():
+	if score == 5 && get_tree().current_scene.name == "Main":
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file(level_2)
+
+	if score == 18 && get_tree().current_scene.name == "level_2":
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file(level_3)
 
 func die():
 	if is_dead:
