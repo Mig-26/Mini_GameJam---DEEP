@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://buaugbel5u3um"]
+
+[ext_resource type="Script" uid="uid://017g5d5o3y1k" path="res://menu.gd" id="1_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://cq262pjl0p2s6" path="res://Assets/MonkeySpriteIdle.png" id="2_cayip"]
+
+[node name="menu" type="Control" unique_id=810090204]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhh6f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1309893903]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 148.0
+offset_right = 724.0
+offset_bottom = 330.0
+color = Color(0.12955362, 0.78813857, 0.3052655, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2129499319]
+position = Vector2(576, 219.00002)
+scale = Vector2(10, 6.305)
+texture = ExtResource("2_cayip")
+region_enabled = true
+region_rect = Rect2(15.657692, 0, 14.0197525, 16)
+
+[node name="Label" type="Label" parent="." unique_id=704390028]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 213.0
+offset_right = 615.0
+offset_bottom = 236.0
+text = "WannaBe Mokey"
+
+[node name="play" type="Button" parent="." unique_id=1995929915]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 281.0
+offset_right = 539.0
+offset_bottom = 312.0
+text = "Play"
+
+[node name="quit" type="Button" parent="." unique_id=190706917]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 281.0
+offset_right = 647.0
+offset_bottom = 312.0
+text = "Quit"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=611129266]
+position = Vector2(572, 237)
+zoom = Vector2(4, 4)
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

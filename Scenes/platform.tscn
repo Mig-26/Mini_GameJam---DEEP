@@ -16,7 +16,7 @@ collision_mask = 2
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=497543824]
 texture = ExtResource("1_1rc8e")
 region_enabled = true
-region_rect = Rect2(7.8230667, 10.680231, 20.239502, 5.440727)
+region_rect = Rect2(8.048, 10.68, 20.24, 5.441)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1359179892]
 z_index = -1

@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="MiniGameJam---Deep"
-run/main_scene="uid://jb0tfi0vyq2o"
+config/name="WannaBeMonkey"
+run/main_scene="uid://buaugbel5u3um"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
