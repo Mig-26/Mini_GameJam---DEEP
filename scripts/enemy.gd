@@ -19,6 +19,3 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 
-
-func _on_hurtbox_received_damage(damage: int) -> void:
-	hide()

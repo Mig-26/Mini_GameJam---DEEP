@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bcy62tr533ve2" path="res://Scenes/platform.tscn" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://dejj3cho1jdvi" path="res://icon.svg" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://b8yvbwlafhetv" path="res://Scenes/enemy.tscn" id="5_kry3j"]
-[ext_resource type="PackedScene" path="res://Scenes/banana.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://hhbxjyky0nyh" path="res://Scenes/banana.tscn" id="6_21xkr"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hptm8"]
 polygon = PackedVector2Array(-8, -3.2374563, 8, -3.4173155, 8, 8, -8, 8)
@@ -333,9 +333,21 @@ position = Vector2(283, -57)
 libraries/ = SubResource("AnimationLibrary_kry3j")
 autoplay = &"plat 3"
 
+[node name="Banana" parent="platforms/Platform2" unique_id=34145087 instance=ExtResource("6_21xkr")]
+position = Vector2(1, -12)
+
 [node name="Platform3" parent="platforms" unique_id=1302460777 instance=ExtResource("3_8gbba")]
 position = Vector2(283, -57)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/Platform3" unique_id=1952940906]
 libraries/ = SubResource("AnimationLibrary_kry3j")
 autoplay = &"RESET"
+
+[node name="Banana" parent="platforms/Platform3" unique_id=1350742362 instance=ExtResource("6_21xkr")]
+position = Vector2(1, -12)
+
+[node name="Banana" parent="platforms" unique_id=610601548 instance=ExtResource("6_21xkr")]
+position = Vector2(371, -75)
+
+[node name="Banana2" parent="platforms" unique_id=1022762801 instance=ExtResource("6_21xkr")]
+position = Vector2(376, 19)

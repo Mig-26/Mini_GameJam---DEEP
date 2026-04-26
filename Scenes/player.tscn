@@ -215,6 +215,7 @@ height = 16.0
 script = ExtResource("1_cvnsp")
 animator = NodePath("animator")
 game_over_scene = "uid://br4n1ebfvul68"
+level_2 = "uid://ffpnsulqn52g"
 
 [node name="animator" type="AnimatedSprite2D" parent="." unique_id=485235841]
 sprite_frames = SubResource("SpriteFrames_f1ek2")
@@ -233,11 +234,5 @@ shape = SubResource("CapsuleShape2D_tx1dd")
 visible = false
 position = Vector2(-1, 1)
 shape = SubResource("CapsuleShape2D_fkybt")
-
-[node name="Label" type="Label" parent="." unique_id=474397623]
-offset_left = -52.0
-offset_top = -13.0
-offset_right = -12.0
-offset_bottom = 10.0
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
