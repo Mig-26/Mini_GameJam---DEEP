@@ -254,6 +254,7 @@ text = "collect the bananas, collect the king to move on"
 [node name="Player" parent="." unique_id=1775255907 node_paths=PackedStringArray("banana_label") instance=ExtResource("1_jjgbg")]
 position = Vector2(19, -24)
 banana_label = NodePath("BananaScore")
+game_over_scene = "uid://fhbc2iqar8nw"
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=563215812]
 position = Vector2(-19, 23)
