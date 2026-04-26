@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://buaugbel5u3um"]
 
-[ext_resource type="Script" uid="uid://017g5d5o3y1k" path="res://menu.gd" id="1_xhh6f"]
+[ext_resource type="Script" uid="uid://017g5d5o3y1k" path="res://scripts/menu.gd" id="1_xhh6f"]
 [ext_resource type="Texture2D" uid="uid://cq262pjl0p2s6" path="res://Assets/MonkeySpriteIdle.png" id="2_cayip"]
 
 [node name="menu" type="Control" unique_id=810090204]
