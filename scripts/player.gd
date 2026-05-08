@@ -4,10 +4,6 @@ extends CharacterBody2D
 @export var banana_label: Label
 @export_file("*.tscn") var game_over_scene: String
 
-@export_file("*.tscn") var level_2: String = "res://Scenes/level_2.tscn"
-@export_file("*.tscn") var level_3: String = "res://Scenes/level_3.tscn"
-@export_file("*.tscn") var end: String = ""
-
 @export var death_height: float = 1000.0
 
 const SPEED = 150.0
@@ -66,7 +62,6 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		animator.flip_h = true
 
-	change_level()
 	_fallThroughPlatforms()
 	move_and_slide()
 
@@ -86,19 +81,6 @@ func add_score(amount: int):
 
 func update_score_ui():
 	banana_label.text = "Score: " + str(score)
-
-func change_level():
-	if score == 5 && get_tree().current_scene.name == "Main":
-		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file(level_2)
-
-	if score == 18 && get_tree().current_scene.name == "level_2":
-		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file(level_3)
-
-	if score == 32 && get_tree().current_scene.name == "level_3":
-		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file(end)
 
 func die():
 	if is_dead:
